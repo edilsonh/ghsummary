@@ -1,0 +1,6 @@
+<h1>Github Summaries</h1>
+
+<%= form_with url: summaries_search_path, method: :get, local: true do |form| %>
+ <%= form.text_field :q %>
+ <%= form.submit "Search" %>
+<% end %>

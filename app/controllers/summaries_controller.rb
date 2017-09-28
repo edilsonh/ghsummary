@@ -9,13 +9,13 @@ class SummariesController < ApplicationController
     @summary = Summary.find_or_create_by(username: params[:username])
 
     if request.xhr?
-      if @summary.ready
+      if @summary.ready?
         head 200
       else
         head 202
       end
     else
-      unless @summary.ready
+      unless @summary.ready?
         LoadPageJob.perform_later(@summary.id)
       end
     end

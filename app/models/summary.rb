@@ -38,7 +38,7 @@ class Summary < ApplicationRecord
       })
   end
 
-  def ready
+  def ready?
     user_response.present? && repos_response.present?
   end
 

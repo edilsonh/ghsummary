@@ -1,5 +1,5 @@
-<% if @summary.ready %>
-<h1><%= @summary.user_response["name"] %> <%= @summary.username %></h1>
+<% if @summary.ready? %>
+<h1><%= @summary.user_response["name"] %> - <%= @summary.username %></h1>
 
   <p>
     Languages: <%= @summary.languages %>

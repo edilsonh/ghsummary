@@ -4,12 +4,12 @@ class LoadPageJob < ApplicationJob
   def perform(id)
     summary = Summary.find(id)
 
-    if !summary.ready
+    if !summary.ready?
       summary.get_repos
       summary.get_user
+      summary.save
     end
 
-    summary.save
   end
 
 end
